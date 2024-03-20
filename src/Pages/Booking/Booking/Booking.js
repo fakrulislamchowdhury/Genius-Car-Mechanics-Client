@@ -8,10 +8,10 @@ const Booking = () => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`https://safe-falls-33970.herokuapp.com/services/${serviceId}`)
+        fetch(`http://localhost:5000/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
-    }, []);
+    }, [serviceId]);
 
     return (
         <div>

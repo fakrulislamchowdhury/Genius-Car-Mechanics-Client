@@ -39,7 +39,6 @@ const Experts = () => {
                         key={expert.name}
                         expert={expert}
                     >
-
                     </Expert>)
                 }
             </div>
