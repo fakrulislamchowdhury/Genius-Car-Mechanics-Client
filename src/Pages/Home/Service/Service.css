@@ -1,7 +1,19 @@
 .service{
+    color: black;
     background-color: rgb(226, 241, 241);
-    border-radius:20px ;
+    margin-bottom: 30px;
+    text-align: justify;
+    border-radius: 20px;
 }
 .service img{
     width: 100%;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.ellipsis{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

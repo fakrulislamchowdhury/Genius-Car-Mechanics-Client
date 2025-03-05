@@ -6,12 +6,12 @@ const ManageServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`/services.json`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     const handleDelete = id => {
-        const url = `http://localhost:5000/services/${id}`;
+        const url = `/services.json/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -19,7 +19,7 @@ const ManageServices = () => {
             .then(data => {
                 if (data.deletedCount) {
                     alert('Deleted');
-                    const remaining = services.filter(service => service._id !== id);
+                    const remaining = services.filter(service => service.id !== id);
                     setServices(remaining)
                 }
             })
@@ -28,9 +28,9 @@ const ManageServices = () => {
         <div>
             <h1>ManageServices</h1>
             {
-                services.map(service => <div key={service._id}>
+                services.map(service => <div key={service.id}>
                     <h3>{service.name}</h3>
-                    <button onClick={() => handleDelete(service._id)}>Delete</button>
+                    <button onClick={() => handleDelete(service.id)}>Delete</button>
                 </div>)
             }
         </div>
