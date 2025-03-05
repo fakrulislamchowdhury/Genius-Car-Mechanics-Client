@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "genius-car-mechanics-55ab6-31b56",
-    "public": "public",
+    "public": "build",
     "rewrites": [
       {
         "source": "**",
